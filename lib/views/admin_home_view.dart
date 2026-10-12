@@ -4,7 +4,7 @@ import '../controllers/auth_controller.dart';
 import '../controllers/product_controller.dart';
 import '../models/product_model.dart';
 import 'product_form_view.dart';
-import 'product_image.dart';
+import 'livreur_view.dart';
 
 class AdminHomeView extends StatelessWidget {
   const AdminHomeView({super.key});
@@ -52,6 +52,14 @@ class AdminHomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Espace Admin'),
         actions: [
+          IconButton(
+            tooltip: 'Livreurs',
+            icon: const Icon(Icons.local_shipping_outlined),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const LivreursView()),
+            ),
+          ),
           IconButton(
             tooltip: 'Déconnexion',
             icon: const Icon(Icons.logout),
